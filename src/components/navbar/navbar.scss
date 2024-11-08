@@ -1,0 +1,129 @@
+@import "../../style.scss" ; 
+.navbar {
+  @include themify ($themes){
+  
+  position: fixed; /* Make the navbar fixed */
+  top: 0;          /* Position it at the top of the viewport */
+  left: 0;         /* Ensure it stretches from the left */
+  right: 0;        /* Ensure it stretches to the right */
+  z-index: 1000;   /* Ensure it appears above other content */
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: themed(bg); /* Same background color as login/register pages */
+  color:themed(textColor);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  height: 50px; /* Reduced height for navbar */
+
+  /* Add a bottom border as a divider */
+  border-bottom: 2px solid #f0f2f5; /* Light gray divider color */
+
+  /* Left Section */
+  .left {
+    display: flex;
+    align-items: center;
+
+    .brand {
+      font-size: 1.2rem; /* Reduced font size for brand name */
+      font-weight: bold;
+      text-transform: uppercase; /* All caps */
+      color: #ffc107; /* Yellow color */
+      text-decoration: none;
+      margin-right: 20px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+
+      &:hover {
+        background-color: #145dbf; /* Button hover effect color */
+        color: #ffff; /* Text color change on hover */
+        transform: scale(1.1); /* Scale effect on hover */
+      }
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.3s; /* Added transform transition */
+
+      &:hover {
+        color: #1877f2; /* Hover color */
+        transform: scale(1.1); /* Scale effect on hover */
+      }
+    }
+  }
+
+  /* Center Section - Search Bar */
+  .center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
+    .search {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 5px 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      input {
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        font-size: 1rem;
+        color: #333;
+        width: 300px; /* Adjust the width of the search bar */
+      }
+
+      svg {
+        color: #002fff;
+      }
+    }
+  }
+
+  /* Right Section */
+  .right {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      font-size: 1.5rem;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: color 0.3s, transform 0.3s; /* Added transform transition */
+
+      &:hover {
+        color: #1877f2; /* Hover color */
+        transform: scale(1.1); /* Scale effect on hover */
+      }
+    }
+
+    /* Profile Section */
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+
+      .profile-pic {
+        width: 40px; /* Profile picture size */
+        height: 40px;
+        border-radius: 50%; /* Circular shape */
+        border: 2px solid #ffc107; /* Yellow border */
+        margin-right: 10px; /* Space between image and username */
+      }
+
+      .username {
+        font-size: 1rem;
+        font-weight: 500;
+        color: themed(textColor);
+        padding-left: 10px;
+        border-left: 1px solid #ddd; /* Subtle border */
+      }
+    }
+  }
+}
+}

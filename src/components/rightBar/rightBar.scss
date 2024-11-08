@@ -1,0 +1,107 @@
+@import "../../style.scss" ; 
+.rightBar {
+  @include themify ($themes){
+    background-color: themed(bg) ;/* Set a white background for the right bar */ 
+    border-radius: 10px; /* Round corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding around the right bar */
+    height: calc(100vh - 82px); /* Full height minus navbar and other fixed items */
+    position: fixed; /* Fix the position of the right bar */
+    top: 82px; /* Start below the navbar */
+    right: 0; /* Align to the right */
+    overflow: hidden; /* Prevent scrolling of the entire right bar */
+  
+    .section {
+      margin-bottom: 20px;
+      padding: 10px; /* Padding for sections */
+      border-radius: 8px; /* Round corners for sections */
+      background-color: themed(bgsoft); /* White background for sections for contrast */
+      max-height: 300px; /* Set a max height for the sections */
+      overflow-y: auto; /* Enable vertical scrolling */
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  
+      .section-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: themed(textColor);
+        margin-bottom: 10px;
+        border-bottom: 2px solid #007bff; /* Blue underline */
+        padding-bottom: 5px; /* Padding for title */
+      }
+  
+      .divider {
+        margin: 10px 0;
+        border-top: 1px solid #e0e0e0;
+      }
+  
+      .user-item,
+      .activity-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 8px; /* Padding for user and activity items */
+        border-radius: 6px; /* Round corners for items */
+        transition: background-color 0.3s ease; /* Smooth transition for hover */
+        cursor: pointer; /* Pointer cursor for better UX */
+    
+        &:hover {
+          background-color: themed(hover-rightbar); /* Light blue on hover */
+        }
+  
+        .profile-pic {
+          width: 40px; /* Size for suggestions and online friends */
+          height: 40px;
+          border-radius: 50%; /* Make it circular */
+          object-fit: cover;
+          border: 2px solid #ffc107; /* Yellow border */
+          margin-right: 10px;
+        }
+    
+        &.activity-item {
+          .profile-pic {
+            width: 30px; /* Smaller size for activities */
+            height: 30px;
+          }
+        }
+    
+        .username {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #333;
+          flex-grow: 1; /* Allow username to take available space */
+        }
+    
+        .activity-description {
+          flex-grow: 1; /* Allow activity description to take available space */
+          margin-left: 10px;
+          font-size: 0.9rem;
+          color: #555;
+        }
+    
+        .activity-time {
+          font-size: 0.8rem;
+          color: #888;
+        }
+      }
+  
+      .see-more {
+        display: block; /* Make the button a block element */
+        margin-top: 10px; /* Margin above the button */
+        padding: 6px 8px; /* Reduced padding for button */
+        background-color: #007bff; /* Button color */
+        color: white; /* Text color */
+        text-align: center; /* Center the text */
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none; /* Remove underline */
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+        width: auto; /* Set width to auto for compact look */
+        max-width: 100px; /* Max width for button */
+  
+        &:hover {
+          background-color: #0056b3; /* Darker blue on hover */
+          transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+      }
+    }
+  }
+}

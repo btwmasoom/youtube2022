@@ -1,0 +1,156 @@
+.login {
+    height: 100vh;
+    background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+  
+    .card {
+      width: 80%;
+      max-width: 900px;
+      display: flex;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+  
+      .left {
+        flex: 1;
+        background: #f4f4f4;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        // Add some space for the logo
+        .comsats-logo {
+          width: 150px; // Adjust as per your design needs
+          margin-bottom: 20px; // Space between logo and heading
+        }
+  
+        h1 {
+          font-size: 28px;
+          color: #333;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+  
+        p {
+          margin-bottom: 20px;
+          font-size: 16px;
+          color: #555;
+        }
+  
+        span {
+          font-size: 14px;
+          color: #777;
+        }
+  
+        .register-btn {
+          margin-top: 20px;
+          padding: 10px 20px;
+          background-color: #ffc107;
+          color: white;
+          border: none;
+          border-radius: 25px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #ffa000;
+          }
+        }
+      }
+  
+      .right {
+        flex: 1;
+        background: linear-gradient(135deg, #6b73ff, #000dff);
+        padding: 40px;
+        position: relative;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+  
+        h1 {
+          font-size: 28px;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+  
+        form {
+          .input-group {
+            margin-bottom: 20px;
+            position: relative;
+  
+            input {
+              width: 100%;
+              padding: 15px;
+              padding-left: 40px;
+              border: 1px solid #ddd;
+              border-radius: 25px;
+              font-size: 16px;
+              outline: none;
+              background: #fff;
+              color: #333;
+              transition: box-shadow 0.3s ease;
+  
+              &:focus {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+              }
+            }
+  
+            i {
+              position: absolute;
+              top: 50%;
+              left: 15px;
+              transform: translateY(-50%);
+              color: #999;
+            }
+          }
+  
+          .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #ffc107;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+  
+            &:hover {
+              background-color: #ffa000;
+            }
+          }
+        }
+  
+        .circle {
+          position: absolute;
+          border-radius: 50%;
+          background: #ffc107;
+  
+          &.small {
+            width: 20px;
+            height: 20px;
+            top: 20px;
+            right: 20px;
+            background: #9c27b0;
+          }
+  
+          &.large {
+            width: 40px;
+            height: 40px;
+            top: 10px;
+            left: 10px;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,100 @@
+@import "../../style.scss" ; 
+.leftBar {
+  @include themify ($themes){
+  background-color:themed(bg); /* Same background as navbar */
+  width: 280px; /* Set a fixed width for the left bar */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px;
+  position: fixed; /* Fix position to avoid overlap */
+  top: 82px; /* Start below the navbar and divider (50px + 2px) */
+  left: 0; /* Align to the left */
+  height: calc(100% - 52px); /* Full height minus navbar height */
+  overflow: auto; /* Enable scrolling if content overflows */
+
+  .container {
+    padding: 20px;
+
+    .menu {
+      margin-bottom: 20px; /* Add space between menu sections */
+
+      .user {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .profile-pic {
+          width: 40px; /* Increased profile pic size */
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #ffc107; /* Yellow border */
+          margin-right: 15px;
+        }
+
+        .username {
+          font-size: 1rem;
+          font-weight: bold;
+          color: themed(textColor);
+        }
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+        border-radius: 8px;
+
+        &:hover {
+          background-color: #0066ff; /* Subtle hover effect */
+          transform: scale(1.05); /* Scale effect on hover */
+          animation: buttonHover 0.3s forwards; /* Use animation similar to button */
+        }
+
+        .item-icon {
+          width: 24px; /* Increase icon size */
+          height: 24px;
+          margin-right: 15px;
+          object-fit: contain;
+        }
+
+        span {
+          font-size: 1rem;
+          font-weight: 500;
+          color: themed(textColor);
+          flex-grow: 1;
+          text-align: left; /* Align the text properly */
+        }
+      }
+
+      hr {
+        margin: 20px 0;
+        border: none;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .menu > span {
+        font-size: 0.9rem;
+        color: #1100ff;
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* Keyframes for the button hover animation */
+@keyframes buttonHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  }
